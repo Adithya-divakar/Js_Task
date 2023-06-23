@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Page Animation</title>
+  <style>
+    /* Define initial CSS styles for the animated element */
+    #animatedElement {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: top 2s ease, left 2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedElement"></div>
+
+  <script>
+    // Get the animated element
+    var element = document.getElementById("animatedElement");
+
+    // Function to animate the element's position
+    function animateElement() {
+      // Set new top and left positions
+      var newTop = Math.random() * (window.innerHeight - 100); // Random top position
+      var newLeft = Math.random() * (window.innerWidth - 100 ); // Random left position
+
+      // Apply the new positions with animation
+      element.style.top = newTop + "px";
+      element.style.left = newLeft + "px";
+    }
+
+    // Call the animateElement function every .5 seconds
+    setInterval(animateElement, 500);
+  </script>
+</body>
+</html>

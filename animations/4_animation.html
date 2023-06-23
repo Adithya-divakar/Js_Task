@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Slide-in Animation</title>
+  <style>
+    #animatedElement {
+      width: 100%;
+      height: 580px;
+      background-image:url("https://cdn.pixabay.com/photo/2023/06/07/15/53/orchid-8047471_640.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+      left: -1200px;
+      transition: left 1s ease;
+      z-index: -1   ;
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedElement">
+
+  </div>
+
+  <script>
+    var element = document.getElementById("animatedElement");
+
+    function slideIn() {
+      element.style.left = "1px";
+    }
+
+    setTimeout(slideIn, 1000);
+    
+  </script>
+</body>
+</html>

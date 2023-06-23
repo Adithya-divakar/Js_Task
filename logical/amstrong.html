@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digit</p>
+    <script>
+        function isArmstrongNumber(number) {
+  const numString = String(number);
+  const numDigits = numString.length;
+  let sum = 0;
+
+  for (let i = 0; i < numDigits; i++) {
+    const digit = parseInt(numString[i]);
+    sum += Math.pow(digit, numDigits);
+  }
+
+  return sum === number;
+}
+
+console.log(isArmstrongNumber(153)); // Output: true
+console.log(isArmstrongNumber(370)); // Output: true
+console.log(isArmstrongNumber(123)); // Output: false
+
+    </script>
+</body>
+</html>

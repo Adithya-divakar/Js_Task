@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator</title>
+  <style>
+    /* Add some basic CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="number"] {
+      width: 100px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <form id="bmiForm">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" step="0.01" min="0" required>
+    
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" step="0.01" min="0" required>
+    
+    <button type="submit">Calculate BMI</button>
+  </form>
+  
+  <div id="result" class="result"></div>
+
+  <script>
+    const bmiForm = document.getElementById('bmiForm');
+    const resultDiv = document.getElementById('result');
+
+    bmiForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get input values
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value);
+      
+      // Calculate BMI
+      const bmi = calculateBMI(weight, height);
+      
+      // Display the calculated BMI
+      resultDiv.textContent = `Your BMI is ${bmi.toFixed(2)}`;
+    });
+
+    function calculateBMI(weight, height) {
+      // Convert height from cm to meters
+      const heightInMeters = height / 100;
+
+      // Calculate BMI using the formula: BMI = weight / (height^2)
+      const bmi = weight / (heightInMeters * heightInMeters);
+
+      return bmi;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Letter Animation</title>
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+    #animatedText {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedText"></div>
+
+  <script>
+    var text = "Hello, World!"; // The text to animate
+    var delay = 100; // Delay between each letter (in milliseconds)
+    var element = document.getElementById("animatedText");
+
+    function animateText() {
+      var index = 0;
+      var timer = setInterval(function() {
+        element.textContent += text[index];
+        index++;
+        if (index >= text.length) {
+          clearInterval(timer);
+        }
+      }, delay);
+    }
+
+    animateText();
+  </script>
+</body>
+</html>

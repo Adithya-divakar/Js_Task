@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validator</title>
+  <style>
+    /* Add some basic CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="password"] {
+      width: 200px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Password Validator</h1>
+  <form id="passwordForm">
+    <label for="password">Enter Password:</label>
+    <p> Password must contains at least one uppercase letter, one lowercase letter, and one digit</p>
+    <input type="password" id="password" required>
+    <button type="submit">Validate</button>
+  </form>
+  
+  <div id="result" class="result"></div>
+
+  <script>
+    const passwordForm = document.getElementById('passwordForm');
+    const resultDiv = document.getElementById('result');
+
+    passwordForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+
+      
+      // Get password value
+      const passwordInput = document.getElementById('password');
+      const password = passwordInput.value;
+      
+      // Validate the password
+      const isValid = validatePassword(password);
+      
+      // Display the validation result
+      resultDiv.textContent = isValid ? 'Password is valid.' : 'Password is not valid.';
+      
+      // Reset the input field
+      passwordInput.value = '';
+    });
+
+    function validatePassword(password) {
+      // Check the length of the password
+      if (password.length < 8) {
+        return false;
+      }
+
+      // Check if the password contains at least one uppercase letter, one lowercase letter, and one digit
+      const uppercaseRegex = /[A-Z]/;
+      const lowercaseRegex = /[a-z]/;
+      const digitRegex = /[0-9]/;
+
+      if (!uppercaseRegex.test(password) || !lowercaseRegex.test(password) || !digitRegex.test(password)) {
+        return false;
+      }
+
+      // If all conditions pass, the password is valid
+      return true;
+    }
+  </script>
+</body>
+</html>

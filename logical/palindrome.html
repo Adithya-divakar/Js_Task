@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward</p>
+    <script>
+        function isPalindrome(number) {
+  let reversed = 0;
+  let original = number;
+
+  while (number > 0) {
+    const digit = number % 10;
+    reversed = reversed * 10 + digit;
+    number = Math.floor(number / 10);
+  }
+
+  return original === reversed;
+}
+
+console.log(isPalindrome(12321)); // Output: true
+
+    </script>
+</body>
+</html>

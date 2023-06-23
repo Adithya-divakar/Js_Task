@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 3;
+         const b = 5;
+        function factorial(num) {
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+  
+  let result = 1;
+  for (let i = 2; i <= num; i++) {
+    result *= i;
+  }
+
+  return result;
+}
+
+function swapFactorials(a, b) {
+  let factorialA = factorial(a);
+  let factorialB = factorial(b);
+  
+  // Swapping the values
+  const temp = factorialA;
+  factorialA = factorialB;
+  factorialB = temp;
+  
+  return [factorialA, factorialB];
+}
+    
+// Example usage
+
+
+const [newA, newB] = swapFactorials(a, b);
+document.write(`Swapping factorials of ${a} and ${b}:`);
+document.write(`New A: ${newA}`);
+document.write(`New B: ${newB}`);
+
+    </script>
+</body>
+</html>

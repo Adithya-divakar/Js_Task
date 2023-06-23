@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Fade-in Animation</title>
+  <style>
+    /* Define initial CSS styles for the animated element */
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+    #animatedElement {
+        text-align: center;
+        font-size:30px;
+      opacity: 0; /* Start with opacity 0 to hide the element */
+      transition: opacity 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedElement">Hello, I'm a fading element!</div>
+
+  <script>
+    // Get the animated element
+    var element = document.getElementById("animatedElement");
+
+    // Function to animate the element's opacity
+    function fadeInElement() {
+      element.style.opacity = "2";
+    }
+
+    // Call the fadeInElement function after a delay
+    setTimeout(fadeInElement, 1500); // Adjust the delay as needed
+  </script>
+</body>
+</html>

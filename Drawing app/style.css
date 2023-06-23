@@ -1,0 +1,18 @@
+h1{
+    font-family: 'Pacifico', cursive;
+}
+#canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+    
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#controls button, #controls input {
+    margin-right: 10px;
+}
